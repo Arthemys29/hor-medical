@@ -27,43 +27,37 @@ class WebSocketManager:
             self._connections.discard(ws)
         logger.info(f"WS client disconnected. Total: {len(self._connections)}")
 
-    async def broadcast_alert(self, payload: Dict[str, Any]):
-        """Diffuse une alerte JSON à tous les clients connectés."""
+    async def _broadcast(self, message: str):
+        """Méthode interne pour diffuser un message en parallèle."""
         if not self._connections:
             return
 
-        message = json.dumps({"type": "alert", "data": payload})
-        dead: Set[WebSocket] = set()
-
         async with self._lock:
-            connections_snapshot = set(self._connections)
+            connections_snapshot = list(self._connections)
 
-        for ws in connections_snapshot:
+        async def _send(ws: WebSocket):
             try:
                 await ws.send_text(message)
+                return None
             except Exception:
-                dead.add(ws)
+                return ws
 
+        # Envoi en parallèle
+        results = await asyncio.gather(*[_send(ws) for ws in connections_snapshot])
+        
+        # Nettoyage des connexions mortes
+        dead = {ws for ws in results if ws is not None}
         if dead:
             async with self._lock:
                 self._connections -= dead
+
+    async def broadcast_alert(self, payload: Dict[str, Any]):
+        """Diffuse une alerte JSON à tous les clients connectés."""
+        await self._broadcast(json.dumps({"type": "alert", "data": payload}))
 
     async def broadcast_event(self, payload: Dict[str, Any]):
         """Diffuse un événement générique (stat update, etc.)."""
-        if not self._connections:
-            return
-        message = json.dumps({"type": "event", "data": payload})
-        dead: Set[WebSocket] = set()
-        async with self._lock:
-            connections_snapshot = set(self._connections)
-        for ws in connections_snapshot:
-            try:
-                await ws.send_text(message)
-            except Exception:
-                dead.add(ws)
-        if dead:
-            async with self._lock:
-                self._connections -= dead
+        await self._broadcast(json.dumps({"type": "event", "data": payload}))
 
     @property
     def count(self) -> int:

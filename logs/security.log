@@ -576,3 +576,17 @@ HINT:  You will need to rewrite or cast the expression.
 2026-04-02 09:31:36,610 - ws_manager - INFO - WS client connected. Total: 2
 2026-04-02 09:31:41,519 - security - INFO - [LOW] logout | user=infirmier1 ip=127.0.0.1 | Déconnexion utilisateur
 2026-04-02 09:31:41,689 - ws_manager - INFO - WS client disconnected. Total: 1
+2026-04-02 10:43:08 | INFO     | [security] | EVENT=LOGIN_SUCCESS | USER=directeur | IP=127.0.0.1 | SEVERITY=LOW | DESC=Connexion réussie | user_id=1
+2026-04-02 10:44:27 | INFO     | [security] | EVENT=LOGIN_SUCCESS | USER=soc | IP=127.0.0.1 | SEVERITY=LOW | DESC=Connexion réussie | user_id=2
+2026-04-02 10:46:24 | INFO     | [security] | EVENT=LOGOUT | USER=directeur | IP=127.0.0.1 | SEVERITY=LOW | DESC=Déconnexion utilisateur
+2026-04-02 10:46:47 | WARNING  | [security] | EVENT=LOGIN_FAILED | USER=directeur | IP=127.0.0.1 | SEVERITY=MEDIUM | DESC=Échec connexion pour 'directeur' depuis 127.0.0.1 (1 tentative(s) sur 120s)
+2026-04-02 10:47:17 | WARNING  | [security] | EVENT=LOGIN_FAILED | USER=directeur | IP=127.0.0.1 | SEVERITY=MEDIUM | DESC=Échec connexion pour 'directeur' depuis 127.0.0.1 (2 tentative(s) sur 120s)
+2026-04-02 10:47:28 | INFO     | [security] | EVENT=LOGIN_SUCCESS | USER=directeur | IP=127.0.0.1 | SEVERITY=LOW | DESC=Connexion réussie | user_id=1
+2026-04-02 10:48:43 | WARNING  | [security] | EVENT=PASSWORD_CHANGED | USER=directeur | IP=127.0.0.1 | SEVERITY=MEDIUM | DESC=Mot de passe modifié avec succès
+2026-04-02 10:48:49 | INFO     | [security] | EVENT=LOGOUT | USER=directeur | IP=127.0.0.1 | SEVERITY=LOW | DESC=Déconnexion utilisateur
+2026-04-02 10:49:00 | INFO     | [security] | EVENT=LOGIN_SUCCESS | USER=directeur | IP=127.0.0.1 | SEVERITY=LOW | DESC=Connexion réussie | user_id=1
+2026-04-02 10:50:12 | WARNING  | [security] | EVENT=PASSWORD_CHANGED | USER=directeur | IP=127.0.0.1 | SEVERITY=MEDIUM | DESC=Mot de passe modifié avec succès
+2026-04-02 10:50:17 | INFO     | [security] | EVENT=LOGOUT | USER=directeur | IP=127.0.0.1 | SEVERITY=LOW | DESC=Déconnexion utilisateur
+2026-04-02 10:50:28 | WARNING  | [security] | EVENT=LOGIN_FAILED | USER=directeur | IP=127.0.0.1 | SEVERITY=MEDIUM | DESC=Échec connexion pour 'directeur' depuis 127.0.0.1 (1 tentative(s) sur 120s)
+2026-04-02 10:51:24 | WARNING  | [security] | EVENT=LOGIN_FAILED | USER=infirmier1 | IP=127.0.0.1 | SEVERITY=MEDIUM | DESC=Échec connexion pour 'infirmier1' depuis 127.0.0.1 (1 tentative(s) sur 120s)
+2026-04-02 10:51:45 | INFO     | [security] | EVENT=LOGIN_SUCCESS | USER=infirmier1 | IP=127.0.0.1 | SEVERITY=LOW | DESC=Connexion réussie | user_id=3

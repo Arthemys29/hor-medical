@@ -17,18 +17,10 @@ from app.events.event_handlers import register_handlers
 from app.database.connection import init_db, get_db
 from app.auth.auth import require_auth
 from app.database.models import User, UserRole
+from app.services.logging_service import get_security_logger
 
-# Configuration du logging
-os.makedirs('logs', exist_ok=True)
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('logs/security.log'),
-        logging.StreamHandler()
-    ]
-)
-
+# Initialisation du logger de sécurité centralisé
+security_logger = get_security_logger()
 logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Secure Medical Monitor - Hôpital", version="1.0.0")
