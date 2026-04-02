@@ -590,3 +590,8 @@ HINT:  You will need to rewrite or cast the expression.
 2026-04-02 10:50:28 | WARNING  | [security] | EVENT=LOGIN_FAILED | USER=directeur | IP=127.0.0.1 | SEVERITY=MEDIUM | DESC=Échec connexion pour 'directeur' depuis 127.0.0.1 (1 tentative(s) sur 120s)
 2026-04-02 10:51:24 | WARNING  | [security] | EVENT=LOGIN_FAILED | USER=infirmier1 | IP=127.0.0.1 | SEVERITY=MEDIUM | DESC=Échec connexion pour 'infirmier1' depuis 127.0.0.1 (1 tentative(s) sur 120s)
 2026-04-02 10:51:45 | INFO     | [security] | EVENT=LOGIN_SUCCESS | USER=infirmier1 | IP=127.0.0.1 | SEVERITY=LOW | DESC=Connexion réussie | user_id=3
+2026-04-02 11:08:56 | ERROR    | [security] | EVENT=LOGIN_LOCKED | USER=infirmier1 | IP=127.0.0.1 | SEVERITY=HIGH | DESC=Compte verrouillé manuellement par soc | operator=soc
+2026-04-02 11:09:05 | WARNING  | [security] | EVENT=PASSWORD_CHANGED | USER=infirmier1 | IP=127.0.0.1 | SEVERITY=MEDIUM | DESC=Compte déverrouillé manuellement par soc | operator=soc
+2026-04-02 11:10:01 | WARNING  | [security] | EVENT=SENSITIVE_DATA_READ | USER=infirmier1 | IP=127.0.0.1 | SEVERITY=MEDIUM | DESC=Lecture données sensibles par 'infirmier1' (1 en 60s)
+2026-04-02 11:10:29 | WARNING  | [security] | EVENT=SENSITIVE_DATA_READ | USER=infirmier1 | IP=127.0.0.1 | SEVERITY=MEDIUM | DESC=Lecture données sensibles par 'infirmier1' (2 en 60s)
+2026-04-02 11:11:34 | WARNING  | [security] | EVENT=SENSITIVE_DATA_READ | USER=infirmier1 | IP=127.0.0.1 | SEVERITY=MEDIUM | DESC=Lecture données sensibles par 'infirmier1' (1 en 60s)

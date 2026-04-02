@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block title %}Gestion Utilisateurs - SOC{% endblock %}
+{% block page_title %}Contrôle des Accès{% endblock %}
+{% block page_subtitle %}Gestion manuelle des verrouillages de comptes{% endblock %}
+
+
+{% block content %}
+<div class="flex items-center justify-between mb-6">
+    <div class="relative">
+        <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input type="text" id="search" placeholder="Rechercher par nom ou rôle…"
+            class="pl-9 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-white focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all w-80 shadow-sm" />
+    </div>
+    
+    <div class="flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-100 rounded-xl">
+        <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+        <span class="text-xs font-semibold text-indigo-700">Canal de contrôle prioritaire</span>
+    </div>
+</div>
+
+<div class="card overflow-hidden">
+    <table class="w-full text-sm" id="soc-users-table">
+        <thead class="bg-slate-50 border-b border-slate-200">
+            <tr>
+                <th class="text-left py-4 px-6 text-slate-500 font-medium">Utilisateur</th>
+                <th class="text-left py-4 px-6 text-slate-500 font-medium">Rôle</th>
+                <th class="text-left py-4 px-6 text-slate-500 font-medium">Statut de Sécurité</th>
+                <th class="text-left py-4 px-6 text-slate-500 font-medium">Dernière activité</th>
+                <th class="text-center py-4 px-6 text-slate-500 font-medium">Action de Sécurité</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100" id="users-tbody">
+            {% for u in users %}
+            <tr class="hover:bg-slate-50/70 transition-colors user-row" data-name="{{ u.username }} {{ u.full_name }} {{ u.role.value }}">
+                <td class="py-4 px-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm flex-shrink-0 shadow-sm"
+                            style="background:linear-gradient(135deg,hsl('{{ loop.index0 * 73 % 360 }}',55%,50%),hsl('{{ (loop.index0 * 73 + 40) % 360 }}',55%,40%))">
+                            {{ u.full_name[0]|upper }}</div>
+                        <div>
+                            <p class="font-bold text-slate-800">{{ u.full_name }}</p>
+                            <p class="text-xs text-slate-400 font-mono">@{{ u.username }}</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider
+                        {% if u.role.value == 'directeur' %}bg-amber-100 text-amber-700 border border-amber-200
+                        {% elif u.role.value == 'security' %}bg-red-100 text-red-700 border border-red-200
+                        {% else %}bg-green-100 text-green-700 border border-green-200{% endif %}">
+                        {{ u.role.value }}
+                    </span>
+                </td>
+                <td class="py-4 px-6">
+                    <div class="flex items-center gap-2">
+                        {% if u.is_locked %}
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                        </span>
+                        <span class="text-xs font-bold text-red-600">VERROUILLÉ</span>
+                        {% else %}
+                        <span class="h-2 w-2 rounded-full bg-green-500"></span>
+                        <span class="text-xs font-bold text-green-600">OPÉRATIONNEL</span>
+                        {% endif %}
+                    </div>
+                </td>
+                <td class="py-4 px-6 text-slate-500 text-xs tabular-nums">{{ u.created_at.strftime('%d/%m/%Y %H:%M') }}</td>
+                <td class="py-4 px-6 text-center">
+                    {% if u.id != user.id %}
+                    <form method="post" action="/security/users/{{ u.id }}/toggle-lock" class="inline">
+                        <button type="submit" 
+                            class="group relative flex items-center gap-2 mx-auto px-4 py-2 rounded-xl text-xs font-bold transition-all
+                            {% if u.is_locked %}bg-green-600 text-white hover:bg-green-700 shadow-green-200{% else %}bg-red-600 text-white hover:bg-red-700 shadow-red-200{% endif %} shadow-lg hover:-translate-y-0.5">
+                            <span class="icon">
+                                {% if u.is_locked %}
+                                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg>
+                                {% else %}
+                                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                                {% endif %}
+                            </span>
+                            {{ 'DÉVERROUILLER' if u.is_locked else 'BLOQUER COMPTE' }}
+                        </button>
+                    </form>
+                    {% else %}
+                    <span class="text-xs text-slate-300 italic">Auto-contrôle restreint</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="mt-6 flex justify-end">
+    <a href="/security/dashboard" class="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        Retour au centre de contrôle
+    </a>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    document.getElementById('search').addEventListener('input', function () {
+        const q = this.value.toLowerCase();
+        document.querySelectorAll('.user-row').forEach(row => {
+            row.style.display = row.dataset.name.toLowerCase().includes(q) ? '' : 'none';
+        });
+    });
+</script>
+{% endblock %}

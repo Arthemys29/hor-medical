@@ -129,14 +129,3 @@ async def create_user(
     })
     
     return RedirectResponse(url="/admin/users", status_code=303)
-
-@router.post("/admin/users/{user_id}/toggle-lock")
-async def toggle_lock_user(user_id: int, request: Request, db: AsyncSession = Depends(get_db)):
-    admin = await require_roles(request, db, UserRole.directeur)
-    result = await db.execute(select(User).where(User.id == user_id))
-    u = result.scalar_one_or_none()
-    if not u: raise HTTPException(status_code=404)
-    u.is_locked = not u.is_locked
-    if not u.is_locked: u.failed_attempts = 0
-    await db.commit()
-    return RedirectResponse(url="/admin/users", status_code=303)

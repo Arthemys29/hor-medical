@@ -111,6 +111,56 @@ async def resolve_alert(alert_id: int, request: Request, db: AsyncSession = Depe
     return RedirectResponse(url="/security/dashboard", status_code=303)
 
 
+@router.post("/security/users/{user_id}/toggle-lock")
+async def security_toggle_lock(user_id: int, request: Request, db: AsyncSession = Depends(get_db)):
+    """Verrouiller ou déverrouiller un compte (SOC)"""
+    user_sec = await require_roles(request, db, UserRole.security, UserRole.directeur)
+    
+    result = await db.execute(select(User).where(User.id == user_id))
+    u = result.scalar_one_or_none()
+    if not u:
+        raise HTTPException(status_code=404, detail="Utilisateur non trouvé")
+        
+    # On ne peut pas se verrouiller soi-même via cette route
+    if u.id == user_sec.id:
+        raise HTTPException(status_code=400, detail="Action impossible sur soi-même")
+        
+    u.is_locked = not u.is_locked
+    action = "verrouillé" if u.is_locked else "déverrouillé"
+    if not u.is_locked:
+        u.failed_attempts = 0
+        
+    await db.commit()
+    
+    # Émettre un événement de sécurité car une action manuelle a été prise
+    await event_manager.emit(
+        EventType.LOGIN_LOCKED if u.is_locked else EventType.PASSWORD_CHANGED,
+        {
+            "username": u.username,
+            "ip": request.client.host,
+            "description": f"Compte {action} manuellement par {user_sec.username}",
+            "operator": user_sec.username
+        }
+    )
+    
+    return RedirectResponse(url="/security/users", status_code=303)
+
+
+@router.get("/security/users", response_class=HTMLResponse)
+async def security_users_list(request: Request, db: AsyncSession = Depends(get_db)):
+    """Liste des comptes pour gestion SOC"""
+    user = await require_roles(request, db, UserRole.security, UserRole.directeur)
+    
+    result = await db.execute(select(User).order_by(User.created_at.desc()))
+    users = result.scalars().all()
+    
+    return templates.TemplateResponse("security/users.html", {
+        "request": request,
+        "user": user,
+        "users": users
+    })
+
+
 @router.get("/api/stats")
 async def get_stats(db: AsyncSession = Depends(get_db)):
     """API pour récupérer les stats (fallback si WS mort)"""
