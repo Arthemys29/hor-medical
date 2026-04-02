@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block title %}Nouvelle Consultation{% endblock %}
+{% block page_title %}Nouvelle consultation{% endblock %}
+{% block page_subtitle %}{{ patient.prenom }} {{ patient.nom }}{% endblock %}
+
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <div class="card p-8">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-xl"
+                style="background: linear-gradient(135deg, #1558a0, #1d6fb8)">
+                {{ patient.prenom[0] }}{{ patient.nom[0] }}
+            </div>
+            <div>
+                <h2 class="text-xl font-bold text-slate-800">{{ patient.prenom }} {{ patient.nom }}</h2>
+                <p class="text-slate-500 text-sm">Né(e) le {{ patient.date_naissance }}</p>
+            </div>
+        </div>
+
+        <form method="post" action="/patients/{{ patient.id }}/consultation" class="space-y-6">
+            <!-- Constantes vitales -->
+            <div>
+                <h3 class="font-semibold text-slate-800 mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                    Constantes vitales
+                </h3>
+                <div class="grid grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Poids (kg)</label>
+                        <input type="number" step="0.1" name="poids"
+                            class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all"
+                            placeholder="ex: 70.5" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Tension artérielle</label>
+                        <input type="text" name="tension_arterielle"
+                            class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all"
+                            placeholder="ex: 120/80" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Température (°C)</label>
+                        <input type="number" step="0.1" name="temperature"
+                            class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all"
+                            placeholder="ex: 37.5" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Fréquence cardiaque (bpm)</label>
+                        <input type="number" name="frequence_cardiaque"
+                            class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all"
+                            placeholder="ex: 75" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Saturation O2 (%)</label>
+                        <input type="number" step="0.1" name="saturation_o2"
+                            class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all"
+                            placeholder="ex: 98" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diagnostic et traitement -->
+            <div>
+                <h3 class="font-semibold text-slate-800 mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                            d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+                    </svg>
+                    Diagnostic et traitement
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Diagnostic <span
+                                class="text-red-500">*</span></label>
+                        <textarea name="diagnostic" required rows="4"
+                            class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all resize-none"
+                            placeholder="Décrivez le diagnostic..."></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Traitement <span
+                                class="text-red-500">*</span></label>
+                        <textarea name="traitement" required rows="4"
+                            class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all resize-none"
+                            placeholder="Prescription du traitement..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Confidentialité et observations -->
+            <div>
+                <h3 class="font-semibold text-slate-800 mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                        <path d="M7 11V7a5 5 0 0110 0v4" />
+                    </svg>
+                    Confidentialité et observations
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Niveau de confidentialité</label>
+                        <select name="niveau_confidentialite"
+                            class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all">
+                            <option value="normal">Normal - Dossier standard</option>
+                            <option value="confidentiel">Confidentiel - Accès restreint</option>
+                            <option value="secret">Secret - Accès très restreint</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Observations (optionnel)</label>
+                        <textarea name="observations" rows="3"
+                            class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all resize-none"
+                            placeholder="Notes complémentaires..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons -->
+            <div class="pt-4 flex items-center gap-3">
+                <button type="submit" class="flex-1 py-3 rounded-xl text-white font-semibold text-sm transition-all"
+                    style="background: linear-gradient(135deg,#1558a0,#1d6fb8); box-shadow: 0 4px 14px rgba(21,88,160,.3)">
+                    Enregistrer la consultation
+                </button>
+                <a href="/patients/{{ patient.id }}"
+                    class="px-6 py-3 rounded-xl text-slate-600 font-semibold text-sm border border-slate-200 hover:bg-slate-50 transition-all">
+                    Annuler
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

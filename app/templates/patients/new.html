@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Nouveau Patient{% endblock %}
+{% block page_title %}Nouveau patient{% endblock %}
+{% block page_subtitle %}Enregistrer un nouveau dossier{% endblock %}
+
+
+{% block content %}
+<div class="max-w-3xl mx-auto">
+    <div class="card p-8">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center">
+                <svg class="w-7 h-7 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <line x1="19" y1="8" x2="19" y2="14" />
+                    <line x1="22" y1="11" x2="16" y2="11" />
+                </svg>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold text-slate-800">Nouveau patient</h2>
+                <p class="text-slate-500 text-sm">Créer un dossier patient</p>
+            </div>
+        </div>
+
+        <form method="post" action="/patients/nouveau" class="space-y-5">
+            <div class="grid grid-cols-2 gap-5">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1.5">Nom <span
+                            class="text-red-500">*</span></label>
+                    <input type="text" name="nom" required
+                        class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all"
+                        placeholder="ex: DUPONT" />
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1.5">Prénom <span
+                            class="text-red-500">*</span></label>
+                    <input type="text" name="prenom" required
+                        class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all"
+                        placeholder="ex: Jean" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-5">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1.5">Date de naissance <span
+                            class="text-red-500">*</span></label>
+                    <input type="date" name="date_naissance" required
+                        class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all" />
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1.5">Sexe <span
+                            class="text-red-500">*</span></label>
+                    <select name="sexe" required
+                        class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all">
+                        <option value="">Sélectionner</option>
+                        <option value="M">Masculin</option>
+                        <option value="F">Féminin</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1.5">Téléphone</label>
+                <input type="tel" name="telephone"
+                    class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all"
+                    placeholder="ex: 06 12 34 56 78" />
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1.5">Adresse</label>
+                <textarea name="adresse" rows="3"
+                    class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all resize-none"
+                    placeholder="Adresse complète..."></textarea>
+            </div>
+
+            <div class="pt-4 flex items-center gap-3">
+                <button type="submit" class="flex-1 py-3 rounded-xl text-white font-semibold text-sm transition-all"
+                    style="background: linear-gradient(135deg,#1558a0,#1d6fb8); box-shadow: 0 4px 14px rgba(21,88,160,.3)">
+                    Enregistrer le patient
+                </button>
+                <a href="/patients"
+                    class="px-6 py-3 rounded-xl text-slate-600 font-semibold text-sm border border-slate-200 hover:bg-slate-50 transition-all">
+                    Annuler
+                </a>
+            </div>
+        </form>
+
+        <div class="mt-6 p-4 rounded-xl bg-blue-50 border border-blue-100">
+            <p class="text-xs text-blue-800 font-semibold mb-1">💡 Information</p>
+            <p class="text-xs text-blue-700">Tous les champs marqués d'une étoile (*) sont obligatoires. Les autres
+                informations sont optionnelles mais recommandées pour un meilleur suivi du patient.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

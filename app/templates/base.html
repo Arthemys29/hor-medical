@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}SecureData Monitor{% endblock %} — Hôpital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { hospital: { 50: '#f0f7ff', 100: '#e0f0ff', 200: '#bae0ff', 500: '#1d6fb8', 600: '#1558a0', 700: '#0f4080', 800: '#0a2e5c', 900: '#061c3d' } }, fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --sidebar-w: 260px
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #f8fafc
+        }
+
+        .sidebar {
+            width: var(--sidebar-w)
+        }
+
+        .main-content {
+            margin-left: var(--sidebar-w)
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            color: #94a3b8;
+            font-size: .875rem;
+            font-weight: 500;
+            transition: all .18s ease;
+            text-decoration: none
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, .08);
+            color: #fff
+        }
+
+        .nav-link.active {
+            background: rgba(255, 255, 255, .15);
+            color: #fff
+        }
+
+        .nav-link svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .06), 0 4px 20px rgba(0, 0, 0, .04)
+        }
+
+        .badge-low {
+            background: #dbeafe;
+            color: #1e40af
+        }
+
+        .badge-medium {
+            background: #fef9c3;
+            color: #854d0e
+        }
+
+        .badge-high {
+            background: #fee2e2;
+            color: #991b1b
+        }
+
+        .badge-critical {
+            background: #fce7f3;
+            color: #9d174d;
+            animation: pulse-badge 1.5s ease infinite
+        }
+
+        @keyframes pulse-badge {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: .6
+            }
+        }
+
+        .alert-toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            max-width: 380px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, .18);
+            animation: slideIn .3s ease
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(120%);
+                opacity: 0
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1
+            }
+        }
+
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 5px
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: transparent
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px
+        }
+
+        table thead th {
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .04em;
+            text-transform: uppercase
+        }
+
+        .severity-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block
+        }
+
+        .sev-low {
+            background: #3b82f6
+        }
+
+        .sev-medium {
+            background: #f59e0b
+        }
+
+        .sev-high {
+            background: #ef4444
+        }
+
+        .sev-critical {
+            background: #ec4899;
+            animation: pulse-badge 1s ease infinite
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body class="h-full text-slate-800">
+
+    <aside class="sidebar fixed inset-y-0 left-0 z-50 flex flex-col"
+        style="background:linear-gradient(180deg,#0f2c5c 0%,#1558a0 100%);">
+        <div class="px-6 py-5 border-b border-white/10">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5 text-white" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-white font-semibold text-sm leading-tight">SecureData</p>
+                    <p class="text-blue-200 text-xs">Monitor v1.0</p>
+                </div>
+            </div>
+        </div>
+        <div class="px-4 py-4 border-b border-white/10">
+            <div class="flex items-center gap-3 bg-white/10 rounded-xl p-3">
+                <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <span class="text-white font-semibold text-sm">{{ user.full_name[0]|upper if user else '?' }}</span>
+                </div>
+                <div class="min-w-0">
+                    <p class="text-white text-sm font-medium truncate">{{ user.full_name if user else 'Inconnu' }}</p>
+                    {% if user %}
+                    <span
+                        class="inline-block text-xs px-2 py-0.5 rounded-full mt-0.5 {% if user.role.value == 'directeur' %}bg-amber-400/20 text-amber-200{% elif user.role.value == 'security' %}bg-red-400/20 text-red-200{% else %}bg-green-400/20 text-green-200{% endif %}">{{
+                        user.role.value|title }}</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <nav class="flex-1 px-3 py-4 space-y-1 overflow-y-auto scrollbar-thin">
+            {% if user %}
+                {% if user.role.value == 'directeur' %}
+                <a href="/admin/dashboard" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+                    Tableau de Bord
+                </a>
+                <a href="/patients" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /></svg>
+                    Patients
+                </a>
+                <a href="/admin/users" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+                    Utilisateurs
+                </a>
+                <a href="/security/dashboard" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                    Sécurité
+                </a>
+                {% elif user.role.value == 'security' %}
+                <a href="/security/dashboard" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                    Monitoring Sécurité
+                </a>
+                {% elif user.role.value == 'infirmier' %}
+                <a href="/dashboard/infirmier" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+                    Tableau de Bord
+                </a>
+                <a href="/patients" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /></svg>
+                    Dossiers Patients
+                </a>
+                <a href="/patients/nouveau" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="16" y2="12" /></svg>
+                    Nouveau Patient
+                </a>
+                {% endif %}
+            {% endif %}
+            {% block nav_links %}{% endblock %}
+        </nav>
+        <div class="px-3 py-4 border-t border-white/10 space-y-1">
+            <a href="/change-password" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                    <path d="M7 11V7a5 5 0 0110 0v4" />
+                </svg>Mot de passe</a>
+            <a href="/logout" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" />
+                </svg>Déconnexion</a>
+        </div>
+    </aside>
+
+    <div class="main-content min-h-screen flex flex-col">
+        <header
+            class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200/80 px-8 py-3 flex items-center justify-between">
+            <div>
+                <h1 class="text-lg font-semibold text-slate-800">{% block page_title %}Tableau de bord{% endblock %}
+                </h1>
+                <p class="text-xs text-slate-400">{% block page_subtitle %}{% endblock %}</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <div id="ws-indicator" class="flex items-center gap-1.5 text-xs text-slate-400">
+                    <span class="w-2 h-2 rounded-full bg-green-400" id="ws-dot"></span>
+                    <span id="ws-label">Connecté</span>
+                </div>
+                <div class="text-sm text-slate-500" id="clock"></div>
+            </div>
+        </header>
+        <main class="flex-1 p-8">{% block content %}{% endblock %}</main>
+        <footer class="px-8 py-3 border-t border-slate-200 text-xs text-slate-400 text-center">© 2025 SecureData Monitor
+            — Hôpital Universitaire · <span id="footer-date"></span></footer>
+    </div>
+
+    <div id="toast-container" class="fixed top-5 right-5 z-[9999] flex flex-col gap-3" style="max-width:380px"></div>
+
+    <script>
+        function updateClock() { const now = new Date(); const c = document.getElementById('clock'); const f = document.getElementById('footer-date'); if (c) c.textContent = now.toLocaleTimeString('fr-FR'); if (f) f.textContent = now.toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }); }
+        setInterval(updateClock, 1000); updateClock();
+        document.querySelectorAll('.nav-link').forEach(l => { if (l.href && window.location.pathname === new URL(l.href, location.origin).pathname) l.classList.add('active'); });
+        const LEVEL_STYLES = { low: { bg: 'bg-blue-50', border: 'border-blue-200', icon: 'ℹ️', text: 'text-blue-800' }, medium: { bg: 'bg-amber-50', border: 'border-amber-200', icon: '⚠️', text: 'text-amber-800' }, high: { bg: 'bg-red-50', border: 'border-red-200', icon: '🚨', text: 'text-red-800' }, critical: { bg: 'bg-pink-50', border: 'border-pink-300', icon: '🔴', text: 'text-pink-900' } };
+        function showToast(alert) { const s = LEVEL_STYLES[alert.alert_level] || LEVEL_STYLES.low; const div = document.createElement('div'); div.className = `alert-toast border ${s.bg} ${s.border} p-4`; div.innerHTML = `<div class="flex items-start gap-3"><span class="text-xl flex-shrink-0">${s.icon}</span><div class="flex-1 min-w-0"><p class="text-xs font-semibold uppercase tracking-wide ${s.text} mb-1">${alert.alert_level.toUpperCase()}</p><p class="text-sm ${s.text} leading-snug">${alert.message}</p><p class="text-xs text-slate-400 mt-1">${new Date(alert.timestamp).toLocaleTimeString('fr-FR')}</p></div><button onclick="this.closest('.alert-toast').remove()" class="text-slate-400 hover:text-slate-600 flex-shrink-0">✕</button></div>`; document.getElementById('toast-container').prepend(div); setTimeout(() => div.remove(), alert.alert_level === 'critical' ? 12000 : 7000); }
+        (function initWS() { const wsUrl = `ws://${location.host}/ws/alerts`; let ws, retryDelay = 3000; function connect() { ws = new WebSocket(wsUrl); ws.onopen = () => { document.getElementById('ws-dot').className = 'w-2 h-2 rounded-full bg-green-400'; document.getElementById('ws-label').textContent = 'Connecté'; retryDelay = 3000; }; ws.onmessage = (e) => { try { const msg = JSON.parse(e.data); if (msg.type === 'alert') showToast(msg.data); } catch (err) { } }; ws.onclose = () => { document.getElementById('ws-dot').className = 'w-2 h-2 rounded-full bg-red-400'; document.getElementById('ws-label').textContent = 'Déconnecté'; setTimeout(connect, retryDelay); retryDelay = Math.min(retryDelay * 2, 30000); }; ws.onerror = () => ws.close(); } connect(); })();
+    </script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+
+</html>

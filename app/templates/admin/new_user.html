@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block title %}Nouvel Utilisateur{% endblock %}
+{% block page_title %}Créer un utilisateur{% endblock %}
+{% block page_subtitle %}Ajouter un nouvel accès au système{% endblock %}
+
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <div class="card p-8">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center">
+                <svg class="w-7 h-7 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold text-slate-800">Nouvel utilisateur</h2>
+                <p class="text-slate-500 text-sm">Remplissez les informations ci-dessous</p>
+            </div>
+        </div>
+
+        {% if error %}
+        <div class="mb-5 p-4 rounded-xl bg-red-50 border border-red-200 flex items-start gap-3">
+            <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="15" y1="9" x2="9" y2="15" />
+                <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+            <div>
+                <p class="text-red-800 font-semibold text-sm">Erreur</p>
+                <p class="text-red-700 text-sm mt-0.5">{{ error }}</p>
+            </div>
+        </div>
+        {% endif %}
+
+        <form method="post" action="/admin/users/nouveau" class="space-y-5">
+            <div class="grid grid-cols-2 gap-5">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1.5">Identifiant</label>
+                    <input type="text" name="username" required
+                        class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all"
+                        placeholder="ex: jdupont" />
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1.5">Nom complet</label>
+                    <input type="text" name="full_name" required
+                        class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all"
+                        placeholder="ex: Jean Dupont" />
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1.5">Mot de passe</label>
+                <input type="password" name="password" id="pwd" required minlength="8"
+                    class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all"
+                    placeholder="Minimum 8 caractères" />
+                <div class="mt-2 h-2 rounded-full bg-slate-100 overflow-hidden">
+                    <div id="strength-bar" class="h-full rounded-full transition-all duration-300" style="width:0%">
+                    </div>
+                </div>
+                <p id="strength-label" class="text-xs text-slate-400 mt-1"></p>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1.5">Rôle</label>
+                <select name="role" required
+                    class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all">
+                    <option value="">Sélectionner un rôle</option>
+                    <option value="directeur">Directeur - Accès complet (création utilisateurs, patients, sécurité)
+                    </option>
+                    <option value="security">Security - Surveillance uniquement (dashboard sécurité, alertes)</option>
+                    <option value="infirmier">Infirmier - Gestion patients (consultations, dossiers médicaux)</option>
+                </select>
+            </div>
+
+            <div class="pt-4 flex items-center gap-3">
+                <button type="submit" class="flex-1 py-3 rounded-xl text-white font-semibold text-sm transition-all"
+                    style="background: linear-gradient(135deg,#1558a0,#1d6fb8); box-shadow: 0 4px 14px rgba(21,88,160,.3)">
+                    Créer l'utilisateur
+                </button>
+                <a href="/admin/users"
+                    class="px-6 py-3 rounded-xl text-slate-600 font-semibold text-sm border border-slate-200 hover:bg-slate-50 transition-all">
+                    Annuler
+                </a>
+            </div>
+        </form>
+
+        <div class="mt-6 p-4 rounded-xl bg-blue-50 border border-blue-100">
+            <p class="text-xs text-blue-800 font-semibold mb-1">💡 Conseil</p>
+            <p class="text-xs text-blue-700">Choisissez un mot de passe fort avec au moins 8 caractères, incluant
+                majuscules, chiffres et caractères spéciaux.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('pwd').addEventListener('input', function () {
+        const v = this.value, bar = document.getElementById('strength-bar'), label = document.getElementById('strength-label');
+        let score = 0;
+        if (v.length >= 8) score++;
+        if (/[A-Z]/.test(v)) score++;
+        if (/[0-9]/.test(v)) score++;
+        if (/[^A-Za-z0-9]/.test(v)) score++;
+        const map = [{ w: '25%', c: 'bg-red-400', t: 'Faible' }, { w: '50%', c: 'bg-amber-400', t: 'Moyen' }, { w: '75%', c: 'bg-blue-400', t: 'Bon' }, { w: '100%', c: 'bg-green-500', t: 'Excellent' }];
+        const s = map[Math.max(0, score - 1)] || map[0];
+        bar.style.width = score ? s.w : '0%';
+        bar.className = `h-full rounded-full transition-all duration-300 ${score ? s.c : ''}`;
+        label.textContent = score ? s.t : '';
+    });
+</script>
+{% endblock %}

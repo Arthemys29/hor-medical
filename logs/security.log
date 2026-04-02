@@ -1,0 +1,578 @@
+2026-04-01 21:43:24,163 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 21:43:24,164 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 21:43:24,164 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 21:43:24,164 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 21:43:24,164 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 21:43:24,164 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 21:43:24,166 - root - INFO - Application démarrée
+2026-04-01 21:44:00,606 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 21:44:00,607 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 21:44:00,607 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 21:44:00,607 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 21:44:00,607 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 21:44:00,607 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 21:44:00,610 - root - INFO - Application démarrée
+2026-04-01 21:44:00,618 - root - INFO - Application arrêtée
+2026-04-01 21:44:36,415 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 21:44:36,415 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 21:44:36,415 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 21:44:36,415 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 21:44:36,415 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 21:44:36,416 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 21:44:36,418 - root - INFO - Application démarrée
+2026-04-01 21:55:11,270 - root - INFO - Application arrêtée
+2026-04-01 21:55:17,201 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 21:55:17,201 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 21:55:17,202 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 21:55:17,202 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 21:55:17,202 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 21:55:17,203 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 21:55:17,217 - root - INFO - Application démarrée
+2026-04-01 22:01:31,141 - root - INFO - Application arrêtée
+2026-04-01 22:01:40,501 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 22:01:40,501 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 22:01:40,501 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 22:01:40,501 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 22:01:40,502 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 22:01:40,502 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 22:01:40,503 - root - INFO - Application démarrée
+2026-04-01 22:03:09,023 - root - INFO - Application arrêtée
+2026-04-01 22:03:11,562 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 22:03:11,562 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 22:03:11,564 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 22:03:11,565 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 22:03:11,565 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 22:03:11,565 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 22:03:11,570 - root - INFO - Application démarrée
+2026-04-01 22:06:52,886 - root - INFO - Application arrêtée
+2026-04-01 22:06:54,519 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 22:06:54,520 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 22:06:54,520 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 22:06:54,520 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 22:06:54,520 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 22:06:54,520 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 22:06:54,522 - root - INFO - Application démarrée
+2026-04-01 22:07:16,046 - root - INFO - Application arrêtée
+2026-04-01 22:07:18,164 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 22:07:18,165 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 22:07:18,165 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 22:07:18,166 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 22:07:18,166 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 22:07:18,166 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 22:07:18,178 - root - INFO - Application démarrée
+2026-04-01 22:07:51,653 - root - INFO - Application arrêtée
+2026-04-01 22:07:54,228 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 22:07:54,228 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 22:07:54,229 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 22:07:54,229 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 22:07:54,230 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 22:07:54,230 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 22:07:54,232 - root - INFO - Application démarrée
+2026-04-01 22:08:18,542 - root - INFO - Application arrêtée
+2026-04-01 22:08:20,605 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 22:08:20,605 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 22:08:20,606 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 22:08:20,609 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 22:08:20,610 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 22:08:20,610 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 22:08:20,612 - root - INFO - Application démarrée
+2026-04-01 22:08:20,714 - root - INFO - Application arrêtée
+2026-04-01 22:08:22,701 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 22:08:22,702 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 22:08:22,702 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 22:08:22,703 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 22:08:22,703 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 22:08:22,703 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 22:08:22,711 - root - INFO - Application démarrée
+2026-04-01 22:08:24,218 - root - INFO - Application arrêtée
+2026-04-01 22:08:25,909 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 22:08:25,910 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 22:08:25,910 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 22:08:25,910 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 22:08:25,911 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 22:08:25,911 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 22:08:25,913 - root - INFO - Application démarrée
+2026-04-01 22:08:26,516 - root - INFO - Application arrêtée
+2026-04-01 22:08:28,566 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 22:08:28,566 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 22:08:28,567 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 22:08:28,567 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 22:08:28,567 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 22:08:28,567 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 22:08:28,570 - root - INFO - Application démarrée
+2026-04-01 22:08:55,069 - root - INFO - Application arrêtée
+2026-04-01 22:08:57,407 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 22:08:57,407 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 22:08:57,407 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 22:08:57,408 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 22:08:57,408 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 22:08:57,409 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 22:08:57,412 - root - INFO - Application démarrée
+2026-04-01 22:10:52,047 - root - INFO - Application arrêtée
+2026-04-01 22:10:53,605 - app.events.event_manager - INFO - Handler enregistré pour login_failed
+2026-04-01 22:10:53,606 - app.events.event_manager - INFO - Handler enregistré pour multiple_login_failures
+2026-04-01 22:10:53,606 - app.events.event_manager - INFO - Handler enregistré pour sql_injection_attempt
+2026-04-01 22:10:53,606 - app.events.event_manager - INFO - Handler enregistré pour unauthorized_resource_access
+2026-04-01 22:10:53,606 - app.events.event_manager - INFO - Handler enregistré pour massive_data_access
+2026-04-01 22:10:53,606 - app.events.event_manager - INFO - Handler enregistré pour id_enumeration_attempt
+2026-04-01 22:10:53,610 - root - INFO - Application démarrée
+2026-04-02 00:52:38,551 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 00:52:38,670 - app.main - INFO - Application démarrée avec succès
+2026-04-02 00:53:08,478 - app.main - INFO - Application arrêtée
+2026-04-02 00:53:10,118 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 00:53:10,218 - app.main - INFO - Application démarrée avec succès
+2026-04-02 00:56:54,789 - app.main - INFO - Application arrêtée
+2026-04-02 00:57:00,275 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 00:57:00,364 - app.main - INFO - Application démarrée avec succès
+2026-04-02 00:58:00,397 - app.main - INFO - Application arrêtée
+2026-04-02 00:58:04,990 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 00:58:05,081 - app.main - INFO - Application démarrée avec succès
+2026-04-02 00:59:13,654 - app.main - INFO - Application arrêtée
+2026-04-02 00:59:15,078 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 00:59:15,201 - app.main - INFO - Application démarrée avec succès
+2026-04-02 00:59:26,040 - app.main - INFO - Application arrêtée
+2026-04-02 00:59:27,215 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 00:59:27,327 - app.main - INFO - Application démarrée avec succès
+2026-04-02 01:01:09,878 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/home/lux/hor-medical/venv/lib/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-04-02 01:01:37,885 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/home/lux/hor-medical/venv/lib/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-04-02 01:01:43,278 - app.main - INFO - Application arrêtée
+2026-04-02 01:01:44,495 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 01:01:44,697 - app.main - INFO - Application démarrée avec succès
+2026-04-02 01:02:00,963 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/home/lux/hor-medical/venv/lib/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-04-02 01:04:26,220 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/home/lux/hor-medical/venv/lib/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-04-02 01:08:37,931 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 01:08:38,047 - app.main - INFO - Application démarrée avec succès
+2026-04-02 01:09:02,034 - app.main - INFO - Application arrêtée
+2026-04-02 01:09:03,723 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 01:09:03,819 - app.main - INFO - Application démarrée avec succès
+2026-04-02 01:09:11,138 - security - INFO - [MEDIUM] login_failed | user=directeur ip=127.0.0.1 | Échec connexion pour 'directeur' depuis 127.0.0.1 (1 tentative(s) sur 120s)
+2026-04-02 01:09:39,769 - app.main - INFO - Application arrêtée
+2026-04-02 01:09:41,171 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 01:09:41,261 - app.main - INFO - Application démarrée avec succès
+2026-04-02 01:10:37,850 - security - INFO - [MEDIUM] login_failed | user=infirmier1 ip=127.0.0.1 | Échec connexion pour 'infirmier1' depuis 127.0.0.1 (1 tentative(s) sur 120s)
+2026-04-02 01:25:53,493 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 01:25:53,730 - app.main - INFO - Application démarrée avec succès
+2026-04-02 01:26:21,251 - security - INFO - [MEDIUM] login_unknown_user | user=infirmier1 ip=127.0.0.1 | Tentative de connexion avec un utilisateur inexistant
+2026-04-02 01:27:32,954 - security - INFO - [MEDIUM] login_unknown_user | user=soc ip=127.0.0.1 | Tentative de connexion avec un utilisateur inexistant
+2026-04-02 01:27:45,271 - security - INFO - [MEDIUM] login_unknown_user | user=directeur ip=127.0.0.1 | Tentative de connexion avec un utilisateur inexistant
+2026-04-02 01:38:34,467 - app.main - INFO - Application arrêtée
+2026-04-02 01:38:39,888 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 01:38:40,005 - app.main - INFO - Application démarrée avec succès
+2026-04-02 01:38:49,595 - security - INFO - [MEDIUM] login_failed | user=directeur ip=127.0.0.1 | Échec connexion pour 'directeur' depuis 127.0.0.1 (1 tentative(s) sur 120s)
+2026-04-02 01:39:06,435 - security - INFO - [MEDIUM] login_failed | user=infirmier1 ip=127.0.0.1 | Échec connexion pour 'infirmier1' depuis 127.0.0.1 (1 tentative(s) sur 120s)
+2026-04-02 01:42:58,046 - app.main - INFO - Application arrêtée
+2026-04-02 01:43:16,638 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 01:43:16,731 - app.main - INFO - Application démarrée avec succès
+2026-04-02 01:43:34,725 - security - INFO - [LOW] login_success | user=directeur ip=127.0.0.1 | Connexion réussie
+2026-04-02 01:43:34,740 - security - INFO - [MEDIUM] suspicious_url | user=anonymous ip=127.0.0.1 | URL suspecte accédée: /admin/dashboard
+2026-04-02 01:44:05,192 - security - INFO - [LOW] sensitive_data_read | user=directeur ip=127.0.0.1 | Lecture données sensibles par 'directeur' (1 en 60s)
+2026-04-02 01:44:42,448 - security - INFO - [LOW] login_success | user=directeur ip=127.0.0.1 | Connexion réussie
+2026-04-02 01:44:42,463 - security - INFO - [MEDIUM] suspicious_url | user=anonymous ip=127.0.0.1 | URL suspecte accédée: /admin/dashboard
+2026-04-02 01:44:47,195 - security - INFO - [LOW] sensitive_data_read | user=directeur ip=127.0.0.1 | Lecture données sensibles par 'directeur' (2 en 60s)
+2026-04-02 01:44:49,325 - security - INFO - [MEDIUM] suspicious_url | user=anonymous ip=127.0.0.1 | URL suspecte accédée: /admin/users
+2026-04-02 01:45:14,633 - security - INFO - [MEDIUM] suspicious_url | user=anonymous ip=127.0.0.1 | URL suspecte accédée: /admin/users
+2026-04-02 01:45:16,519 - security - INFO - [MEDIUM] suspicious_url | user=anonymous ip=127.0.0.1 | URL suspecte accédée: /admin/dashboard
+2026-04-02 01:45:23,097 - security - INFO - [MEDIUM] suspicious_url | user=anonymous ip=127.0.0.1 | URL suspecte accédée: /admin/users
+2026-04-02 01:46:13,953 - security - INFO - [LOW] logout | user=directeur ip=127.0.0.1 | Déconnexion utilisateur
+2026-04-02 01:46:29,931 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 01:46:54,367 - security - INFO - [LOW] login_success | user=infirmier1 ip=127.0.0.1 | Connexion réussie
+2026-04-02 01:47:59,657 - security - INFO - [MEDIUM] suspicious_url | user=anonymous ip=127.0.0.1 | URL suspecte accédée: /admin/dashboard
+2026-04-02 01:49:20,480 - app.main - INFO - Application arrêtée
+2026-04-02 01:49:21,612 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 01:49:21,697 - app.main - INFO - Application démarrée avec succès
+2026-04-02 01:49:22,299 - app.main - INFO - Application arrêtée
+2026-04-02 01:49:23,465 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 01:49:23,583 - app.main - INFO - Application démarrée avec succès
+2026-04-02 01:49:27,196 - app.main - INFO - Application arrêtée
+2026-04-02 01:49:28,287 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 01:49:28,369 - app.main - INFO - Application démarrée avec succès
+2026-04-02 01:50:29,794 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 01:53:29,941 - app.main - INFO - Application arrêtée
+2026-04-02 01:53:31,303 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 01:53:31,390 - app.main - INFO - Application démarrée avec succès
+2026-04-02 01:53:38,423 - app.main - INFO - Application arrêtée
+2026-04-02 01:53:39,463 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 01:53:39,558 - app.main - INFO - Application démarrée avec succès
+2026-04-02 01:53:59,046 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 02:04:19,462 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:07:25,388 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:07:25,543 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:08:58,240 - app.main - INFO - Application arrêtée
+2026-04-02 02:08:59,410 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:08:59,521 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:09:04,243 - app.main - INFO - Application arrêtée
+2026-04-02 02:09:05,432 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:09:05,520 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:10:12,886 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:10:12,996 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:10:47,988 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:10:48,111 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:11:40,669 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 02:13:29,604 - app.main - INFO - Application arrêtée
+2026-04-02 02:13:30,673 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:13:30,769 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:13:35,591 - app.main - INFO - Application arrêtée
+2026-04-02 02:13:36,884 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:13:37,002 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:13:53,367 - app.main - INFO - Application arrêtée
+2026-04-02 02:13:54,333 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:13:54,425 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:13:58,847 - app.main - INFO - Application arrêtée
+2026-04-02 02:14:00,307 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:14:00,405 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:14:08,835 - app.main - INFO - Application arrêtée
+2026-04-02 02:14:10,074 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:14:10,220 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:14:20,458 - app.main - INFO - Application arrêtée
+2026-04-02 02:14:21,599 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:14:21,711 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:14:38,314 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 02:14:42,399 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 02:14:43,706 - app.main - INFO - Application arrêtée
+2026-04-02 02:14:44,801 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:14:44,895 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:14:52,119 - app.main - INFO - Application arrêtée
+2026-04-02 02:14:53,441 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:14:53,577 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:14:56,489 - app.main - INFO - Application arrêtée
+2026-04-02 02:14:57,492 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:14:57,592 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:15:09,542 - app.main - INFO - Application arrêtée
+2026-04-02 02:15:10,674 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:15:10,766 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:15:16,513 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 02:15:31,063 - app.main - INFO - Application arrêtée
+2026-04-02 02:15:32,490 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:15:32,609 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:15:41,840 - app.main - INFO - Application arrêtée
+2026-04-02 02:15:43,432 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:15:43,634 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:15:54,471 - app.main - INFO - Application arrêtée
+2026-04-02 02:15:56,191 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:15:56,372 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:16:47,076 - app.main - INFO - Application arrêtée
+2026-04-02 02:16:48,295 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:16:48,397 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:18:44,236 - security - INFO - [MEDIUM] suspicious_url | user=anonymous ip=127.0.0.1 | URL suspecte accédée: /admin/users
+2026-04-02 02:20:29,097 - app.main - INFO - Application arrêtée
+2026-04-02 02:20:30,311 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:20:30,390 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:20:34,117 - app.main - INFO - Application arrêtée
+2026-04-02 02:20:35,250 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:20:35,335 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:20:37,043 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:20:37,145 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:20:39,826 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 02:20:41,846 - security - INFO - [MEDIUM] suspicious_url | user=anonymous ip=127.0.0.1 | URL suspecte accédée: /admin/users
+2026-04-02 02:23:05,174 - app.main - INFO - Application arrêtée
+2026-04-02 02:23:06,237 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:23:06,334 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:23:09,348 - app.main - INFO - Application arrêtée
+2026-04-02 02:23:10,475 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:23:10,567 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:23:11,692 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:23:11,783 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:23:44,328 - app.main - INFO - Application arrêtée
+2026-04-02 02:24:02,954 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:24:03,041 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:24:15,478 - security - INFO - [LOW] logout | user=soc ip=127.0.0.1 | Déconnexion utilisateur
+2026-04-02 02:24:18,946 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 02:24:27,318 - security - INFO - [MEDIUM] suspicious_url | user=anonymous ip=127.0.0.1 | URL suspecte accédée: /admin/users
+2026-04-02 02:25:32,962 - app.main - INFO - Application arrêtée
+2026-04-02 02:25:34,186 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 02:25:34,286 - app.main - INFO - Application démarrée avec succès
+2026-04-02 02:25:38,961 - security - WARNING - [HIGH] unauthorized_patient_access | user=soc ip=127.0.0.1 | Security tente d'accéder aux dossiers patients
+2026-04-02 02:25:43,118 - security - WARNING - [HIGH] unauthorized_patient_access | user=soc ip=127.0.0.1 | Security tente d'accéder aux dossiers patients
+2026-04-02 07:46:27,413 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 07:47:03,273 - app.main - INFO - Application démarrée avec succès
+2026-04-02 07:47:19,220 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 07:47:19,346 - app.main - INFO - Application démarrée avec succès
+2026-04-02 07:47:27,781 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:47:41,719 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:47:42,113 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:47:47,825 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:47:47,835 - security - INFO - [LOW] logout | user=soc ip=127.0.0.1 | Déconnexion utilisateur
+2026-04-02 07:47:51,694 - security - INFO - [LOW] login_success | user=directeur ip=127.0.0.1 | Connexion réussie
+2026-04-02 07:48:11,046 - security - INFO - [LOW] login_success | user=infirmier1 ip=127.0.0.1 | Connexion réussie
+2026-04-02 07:48:11,655 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:48:39,321 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:48:39,422 - security - INFO - [LOW] sensitive_data_read | user=infirmier1 ip=127.0.0.1 | Lecture données sensibles par 'infirmier1' (1 en 60s)
+2026-04-02 07:48:39,693 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:48:58,931 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:48:59,284 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:07,903 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:08,340 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:15,537 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:15,565 - security - INFO - [LOW] sensitive_data_read | user=infirmier1 ip=127.0.0.1 | Lecture données sensibles par 'infirmier1' (2 en 60s)
+2026-04-02 07:49:15,845 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:20,529 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:21,084 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:26,834 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:26,873 - security - INFO - [LOW] sensitive_data_read | user=infirmier1 ip=127.0.0.1 | Lecture données sensibles par 'infirmier1' (3 en 60s)
+2026-04-02 07:49:29,704 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:31,936 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:31,954 - security - INFO - [LOW] sensitive_data_read | user=infirmier1 ip=127.0.0.1 | Lecture données sensibles par 'infirmier1' (4 en 60s)
+2026-04-02 07:49:32,259 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:34,150 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:34,623 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:36,280 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:36,313 - security - INFO - [LOW] sensitive_data_read | user=infirmier1 ip=127.0.0.1 | Lecture données sensibles par 'infirmier1' (5 en 60s)
+2026-04-02 07:49:36,642 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:39,856 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:40,214 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:41,580 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:41,609 - security - INFO - [LOW] sensitive_data_read | user=infirmier1 ip=127.0.0.1 | Lecture données sensibles par 'infirmier1' (5 en 60s)
+2026-04-02 07:49:43,909 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:45,257 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:45,279 - security - INFO - [LOW] sensitive_data_read | user=infirmier1 ip=127.0.0.1 | Lecture données sensibles par 'infirmier1' (6 en 60s)
+2026-04-02 07:49:45,636 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:48,191 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:48,496 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:50,453 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:50,475 - security - INFO - [LOW] sensitive_data_read | user=infirmier1 ip=127.0.0.1 | Lecture données sensibles par 'infirmier1' (7 en 60s)
+2026-04-02 07:49:52,350 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:54,067 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:54,119 - security - INFO - [LOW] sensitive_data_read | user=infirmier1 ip=127.0.0.1 | Lecture données sensibles par 'infirmier1' (8 en 60s)
+2026-04-02 07:49:56,289 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 07:49:57,798 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 07:49:57,833 - security - INFO - [LOW] sensitive_data_read | user=infirmier1 ip=127.0.0.1 | Lecture données sensibles par 'infirmier1' (9 en 60s)
+2026-04-02 07:49:59,763 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:23:17,029 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 08:23:17,200 - app.main - INFO - Application démarrée avec succès
+2026-04-02 08:23:26,194 - security - INFO - [LOW] logout | user=infirmier1 ip=127.0.0.1 | Déconnexion utilisateur
+2026-04-02 08:23:29,608 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 08:23:44,078 - security - INFO - [LOW] login_success | user=directeur ip=127.0.0.1 | Connexion réussie
+2026-04-02 08:23:58,779 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:24:22,778 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:24:23,227 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:24:27,199 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:24:27,300 - security - INFO - [LOW] sensitive_data_read | user=directeur ip=127.0.0.1 | Lecture données sensibles par 'directeur' (1 en 60s)
+2026-04-02 08:24:27,614 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:24:38,678 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:24:39,040 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:24:40,968 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:24:41,355 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:24:42,873 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:24:43,236 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:24:45,346 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:24:47,287 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:24:49,483 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:24:49,897 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:28:47,569 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:28:47,995 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:29:14,175 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:29:14,631 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:31:37,054 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:31:37,600 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:31:39,350 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:31:39,413 - security - INFO - [LOW] sensitive_data_read | user=directeur ip=127.0.0.1 | Lecture données sensibles par 'directeur' (1 en 60s)
+2026-04-02 08:31:39,862 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:31:48,941 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:31:49,365 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:32:00,994 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:32:01,045 - security - INFO - [LOW] sensitive_data_read | user=directeur ip=127.0.0.1 | Lecture données sensibles par 'directeur' (2 en 60s)
+2026-04-02 08:32:01,628 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:32:10,508 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:32:10,608 - app.main - INFO - Application arrêtée
+2026-04-02 08:32:13,758 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 08:32:14,005 - app.main - INFO - Application démarrée avec succès
+2026-04-02 08:32:14,013 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:32:17,418 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:32:17,518 - app.main - INFO - Application arrêtée
+2026-04-02 08:32:19,235 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 08:32:19,449 - app.main - INFO - Application démarrée avec succès
+2026-04-02 08:32:20,429 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:32:44,825 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:32:44,925 - app.main - INFO - Application arrêtée
+2026-04-02 08:32:46,903 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 08:32:47,052 - app.main - INFO - Application démarrée avec succès
+2026-04-02 08:32:47,848 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:32:48,776 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:32:50,985 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:32:52,731 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:32:54,664 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:34:57,857 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:34:57,957 - app.main - INFO - Application arrêtée
+2026-04-02 08:35:00,892 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 08:35:01,032 - app.main - INFO - Application démarrée avec succès
+2026-04-02 08:35:01,036 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:35:21,726 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:35:21,827 - app.main - INFO - Application arrêtée
+2026-04-02 08:35:24,377 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 08:35:24,534 - app.main - INFO - Application démarrée avec succès
+2026-04-02 08:35:24,746 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:35:39,617 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:36:45,833 - app.main - INFO - Application arrêtée
+2026-04-02 08:36:51,164 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 08:36:51,293 - app.main - INFO - Application démarrée avec succès
+2026-04-02 08:37:01,595 - security - INFO - [LOW] login_success | user=directeur ip=127.0.0.1 | Connexion réussie
+2026-04-02 08:38:50,342 - app.main - INFO - Application arrêtée
+2026-04-02 08:38:55,195 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 08:38:55,337 - app.main - INFO - Application démarrée avec succès
+2026-04-02 08:39:02,113 - security - INFO - [LOW] login_success | user=directeur ip=127.0.0.1 | Connexion réussie
+2026-04-02 08:39:02,584 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:39:25,168 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:39:25,591 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:39:27,122 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:39:27,526 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:39:28,754 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:39:31,319 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:39:52,243 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:39:52,725 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:39:55,300 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:39:55,698 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:40:06,684 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:40:06,707 - security - INFO - [LOW] logout | user=directeur ip=127.0.0.1 | Déconnexion utilisateur
+2026-04-02 08:40:09,750 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 08:40:19,780 - app.main - INFO - Application arrêtée
+2026-04-02 08:40:25,619 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 08:40:25,747 - app.main - INFO - Application démarrée avec succès
+2026-04-02 08:40:32,809 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 08:41:17,736 - app.main - INFO - Application arrêtée
+2026-04-02 08:41:19,849 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 08:41:20,015 - app.main - INFO - Application démarrée avec succès
+2026-04-02 08:41:38,016 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 08:42:18,377 - app.main - INFO - Application arrêtée
+2026-04-02 08:42:20,117 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 08:42:20,213 - app.main - INFO - Application démarrée avec succès
+2026-04-02 08:42:29,338 - app.main - INFO - Application arrêtée
+2026-04-02 08:42:30,940 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 08:42:31,154 - app.main - INFO - Application démarrée avec succès
+2026-04-02 08:42:47,206 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 08:42:47,721 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 08:46:28,540 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 08:48:50,672 - app.main - INFO - Application arrêtée
+2026-04-02 08:48:56,049 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 08:48:56,267 - app.main - INFO - Application démarrée avec succès
+2026-04-02 08:48:59,032 - security - INFO - [MEDIUM] login_unknown_user | user=soc ip=127.0.0.1 | Tentative de connexion avec un utilisateur inexistant
+2026-04-02 08:49:05,233 - security - INFO - [MEDIUM] login_unknown_user | user=directeur ip=127.0.0.1 | Tentative de connexion avec un utilisateur inexistant
+2026-04-02 08:49:53,257 - security - INFO - [MEDIUM] login_unknown_user | user=soc ip=127.0.0.1 | Tentative de connexion avec un utilisateur inexistant
+2026-04-02 09:03:51,967 - app.main - INFO - Application arrêtée
+2026-04-02 09:03:55,133 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 09:03:55,375 - app.main - INFO - Application démarrée avec succès
+2026-04-02 09:04:35,293 - security - INFO - [MEDIUM] login_failed | user=soc ip=127.0.0.1 | Échec connexion pour 'soc' depuis 127.0.0.1 (1 tentative(s) sur 120s)
+2026-04-02 09:04:35,494 - event_manager - ERROR - Handler error [handle_login_failed] for EventType.LOGIN_FAILED: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedObjectError'>: type "severity" does not exist
+[SQL: INSERT INTO security_events (timestamp, username, ip_address, event_type, severity, description, status, action_taken) VALUES ($1::TIMESTAMP WITHOUT TIME ZONE, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::severity, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR) RETURNING security_events.id]
+[parameters: (datetime.datetime(2026, 4, 2, 9, 4, 35, 291784), 'soc', '127.0.0.1', 'login_failed', 'medium', "Échec connexion pour 'soc' depuis 127.0.0.1 (1 tentative(s) sur 120s)", 'detected', '')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-02 09:04:47,001 - security - INFO - [LOW] login_success | user=directeur ip=127.0.0.1 | Connexion réussie
+2026-04-02 09:04:47,028 - event_manager - ERROR - Handler error [handle_login_success] for EventType.LOGIN_SUCCESS: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedObjectError'>: type "severity" does not exist
+[SQL: INSERT INTO security_events (timestamp, username, ip_address, event_type, severity, description, status, action_taken) VALUES ($1::TIMESTAMP WITHOUT TIME ZONE, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::severity, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR) RETURNING security_events.id]
+[parameters: (datetime.datetime(2026, 4, 2, 9, 4, 47, 1423), 'directeur', '127.0.0.1', 'login_success', 'low', 'Connexion réussie', 'detected', 'Session ouverte')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-02 09:04:47,582 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:04:52,789 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:04:52,843 - security - INFO - [LOW] logout | user=directeur ip=127.0.0.1 | Déconnexion utilisateur
+2026-04-02 09:05:04,582 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 09:05:04,600 - event_manager - ERROR - Handler error [handle_login_success] for EventType.LOGIN_SUCCESS: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedObjectError'>: type "severity" does not exist
+[SQL: INSERT INTO security_events (timestamp, username, ip_address, event_type, severity, description, status, action_taken) VALUES ($1::TIMESTAMP WITHOUT TIME ZONE, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::severity, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR) RETURNING security_events.id]
+[parameters: (datetime.datetime(2026, 4, 2, 9, 5, 4, 581877), 'soc', '127.0.0.1', 'login_success', 'low', 'Connexion réussie', 'detected', 'Session ouverte')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-02 09:05:25,447 - security - INFO - [LOW] login_success | user=infirmier1 ip=127.0.0.1 | Connexion réussie
+2026-04-02 09:05:25,469 - event_manager - ERROR - Handler error [handle_login_success] for EventType.LOGIN_SUCCESS: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedObjectError'>: type "severity" does not exist
+[SQL: INSERT INTO security_events (timestamp, username, ip_address, event_type, severity, description, status, action_taken) VALUES ($1::TIMESTAMP WITHOUT TIME ZONE, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::severity, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR) RETURNING security_events.id]
+[parameters: (datetime.datetime(2026, 4, 2, 9, 5, 25, 446748), 'infirmier1', '127.0.0.1', 'login_success', 'low', 'Connexion réussie', 'detected', 'Session ouverte')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-02 09:05:25,828 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:05:43,071 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:05:43,471 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:05:49,237 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:05:49,630 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:05:51,487 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:05:51,919 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:05:53,560 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:05:53,911 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:05:55,596 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:05:57,545 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:05:59,076 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:06:01,312 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:06:09,928 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:06:09,947 - security - INFO - [LOW] logout | user=infirmier1 ip=127.0.0.1 | Déconnexion utilisateur
+2026-04-02 09:06:16,116 - app.main - INFO - Application arrêtée
+2026-04-02 09:06:20,759 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 09:06:20,947 - app.main - INFO - Application démarrée avec succès
+2026-04-02 09:06:30,264 - security - INFO - [LOW] login_success | user=directeur ip=127.0.0.1 | Connexion réussie
+2026-04-02 09:06:30,348 - event_manager - ERROR - Handler error [handle_login_success] for EventType.LOGIN_SUCCESS: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.DatatypeMismatchError'>: column "severity" is of type severity_level but expression is of type severity
+HINT:  You will need to rewrite or cast the expression.
+[SQL: INSERT INTO security_events (timestamp, username, ip_address, event_type, severity, description, status, action_taken) VALUES ($1::TIMESTAMP WITHOUT TIME ZONE, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::severity, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR) RETURNING security_events.id]
+[parameters: (datetime.datetime(2026, 4, 2, 9, 6, 30, 261352), 'directeur', '127.0.0.1', 'login_success', 'low', 'Connexion réussie', 'detected', 'Session ouverte')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-02 09:06:30,732 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:06:33,734 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:06:36,805 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:06:39,392 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:06:41,233 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:10:46,660 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:10:47,130 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:11:07,433 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:11:16,949 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:11:18,689 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:11:19,147 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:11:22,921 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:11:23,374 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:11:25,471 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:11:25,580 - security - INFO - [LOW] sensitive_data_read | user=directeur ip=127.0.0.1 | Lecture données sensibles par 'directeur' (1 en 60s)
+2026-04-02 09:11:25,607 - event_manager - ERROR - Handler error [handle_sensitive_data_read] for EventType.SENSITIVE_DATA_READ: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.DatatypeMismatchError'>: column "severity" is of type severity_level but expression is of type severity
+HINT:  You will need to rewrite or cast the expression.
+[SQL: INSERT INTO security_events (timestamp, username, ip_address, event_type, severity, description, status, action_taken) VALUES ($1::TIMESTAMP WITHOUT TIME ZONE, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::severity, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR) RETURNING security_events.id]
+[parameters: (datetime.datetime(2026, 4, 2, 9, 11, 25, 578788), 'directeur', '127.0.0.1', 'sensitive_data_read', 'low', "Lecture données sensibles par 'directeur' (1 en 60s)", 'detected', '')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-02 09:11:25,886 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:11:31,758 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:11:32,163 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:11:33,909 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:12:38,750 - app.main - INFO - Application arrêtée
+2026-04-02 09:12:40,820 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 09:12:40,959 - app.main - INFO - Application démarrée avec succès
+2026-04-02 09:12:48,290 - app.main - INFO - Application arrêtée
+2026-04-02 09:12:51,305 - app.main - INFO - Initialisation de la base de données...
+2026-04-02 09:12:51,454 - app.main - INFO - Application démarrée avec succès
+2026-04-02 09:12:51,458 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:12:51,491 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:12:51,978 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:13:14,691 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:13:15,089 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:13:16,359 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:13:16,385 - security - INFO - [LOW] logout | user=directeur ip=127.0.0.1 | Déconnexion utilisateur
+2026-04-02 09:13:25,910 - security - INFO - [LOW] login_success | user=soc ip=127.0.0.1 | Connexion réussie
+2026-04-02 09:13:26,420 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:13:28,983 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:13:29,362 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:13:44,363 - ws_manager - INFO - WS client disconnected. Total: 0
+2026-04-02 09:13:46,899 - ws_manager - INFO - WS client connected. Total: 1
+2026-04-02 09:25:59,008 - security - INFO - [LOW] login_success | user=infirmier1 ip=127.0.0.1 | Connexion réussie
+2026-04-02 09:25:59,674 - ws_manager - INFO - WS client connected. Total: 2
+2026-04-02 09:28:51,607 - ws_manager - INFO - WS client disconnected. Total: 1
+2026-04-02 09:28:51,831 - ws_manager - INFO - WS client connected. Total: 2
+2026-04-02 09:29:10,458 - ws_manager - INFO - WS client disconnected. Total: 1
+2026-04-02 09:29:10,724 - ws_manager - INFO - WS client connected. Total: 2
+2026-04-02 09:31:12,303 - security - INFO - [LOW] consultation_created | user=infirmier1 ip=127.0.0.1 | Consultation créée pour patient #1
+2026-04-02 09:31:12,346 - security - INFO - [LOW] sensitive_data_read | user=infirmier1 ip=127.0.0.1 | Lecture données sensibles par 'infirmier1' (1 en 60s)
+2026-04-02 09:31:12,608 - ws_manager - INFO - WS client disconnected. Total: 1
+2026-04-02 09:31:12,901 - ws_manager - INFO - WS client connected. Total: 2
+2026-04-02 09:31:33,030 - ws_manager - INFO - WS client disconnected. Total: 1
+2026-04-02 09:31:33,300 - ws_manager - INFO - WS client connected. Total: 2
+2026-04-02 09:31:36,201 - ws_manager - INFO - WS client disconnected. Total: 1
+2026-04-02 09:31:36,610 - ws_manager - INFO - WS client connected. Total: 2
+2026-04-02 09:31:41,519 - security - INFO - [LOW] logout | user=infirmier1 ip=127.0.0.1 | Déconnexion utilisateur
+2026-04-02 09:31:41,689 - ws_manager - INFO - WS client disconnected. Total: 1

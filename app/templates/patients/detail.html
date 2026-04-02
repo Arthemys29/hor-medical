@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% block title %}Dossier Patient{% endblock %}
+{% block page_title %}Dossier patient{% endblock %}
+{% block page_subtitle %}{{ patient.prenom }} {{ patient.nom }}{% endblock %}
+
+
+{% block content %}
+<div class="grid grid-cols-3 gap-6">
+    <!-- Informations patient -->
+    <div class="col-span-1">
+        <div class="card p-6 mb-6">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-white font-bold text-xl"
+                    style="background: linear-gradient(135deg, #1558a0, #1d6fb8)">
+                    {{ patient.prenom[0] }}{{ patient.nom[0] }}
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-slate-800">{{ patient.prenom }} {{ patient.nom }}</h3>
+                    <p class="text-xs text-slate-400">Dossier #{{ patient.id }}</p>
+                </div>
+            </div>
+
+            <div class="space-y-3 text-sm">
+                <div class="flex items-start gap-3">
+                    <svg class="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    <div>
+                        <p class="text-slate-500 text-xs">Date de naissance</p>
+                        <p class="font-medium text-slate-800">{{ patient.date_naissance }}</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <svg class="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 16v-4M12 8h.01" />
+                    </svg>
+                    <div>
+                        <p class="text-slate-500 text-xs">Sexe</p>
+                        <p class="font-medium text-slate-800">{{ 'Masculin' if patient.sexe.value == 'M' else 'Féminin'
+                            }}</p>
+                    </div>
+                </div>
+                {% if patient.telephone %}
+                <div class="flex items-start gap-3">
+                    <svg class="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                    </svg>
+                    <div>
+                        <p class="text-slate-500 text-xs">Téléphone</p>
+                        <p class="font-medium text-slate-800">{{ patient.telephone }}</p>
+                    </div>
+                </div>
+                {% endif %}
+                {% if patient.adresse %}
+                <div class="flex items-start gap-3">
+                    <svg class="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <div>
+                        <p class="text-slate-500 text-xs">Adresse</p>
+                        <p class="font-medium text-slate-800">{{ patient.adresse[:50] }}{% if patient.adresse|length >
+                            50 %}…{% endif %}</p>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Historique consultations -->
+    <div class="col-span-2">
+        <div class="card p-6">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="font-bold text-slate-800">Historique des consultations</h3>
+                {% if user.role.value == 'infirmier' %}
+                <a href="/patients/{{ patient.id }}/consultation"
+                    class="flex items-center gap-2 text-sm font-semibold text-white px-4 py-2.5 rounded-xl transition-all"
+                    style="background: linear-gradient(135deg,#1558a0,#1d6fb8); box-shadow: 0 4px 14px rgba(21,88,160,.3)">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                    Nouvelle consultation
+                </a>
+                {% endif %}
+            </div>
+
+            {% if consultations %}
+            <div class="space-y-3">
+                {% for cons in consultations %}
+                <div
+                    class="p-5 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all">
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-full 
+                                    {% if cons.niveau_confidentialite.value == 'secret' %}bg-red-100 text-red-700
+                                    {% elif cons.niveau_confidentialite.value == 'confidentiel' %}bg-amber-100 text-amber-700
+                                    {% else %}bg-blue-100 text-blue-700{% endif %}">
+                                    {{ cons.niveau_confidentialite.value|capitalize }}
+                                </span>
+                                <span class="text-xs text-slate-400">{{ cons.date_visite.strftime('%d/%m/%Y à %H:%M')
+                                    }}</span>
+                            </div>
+                            <p class="text-xs text-slate-500">Infirmier:
+                                {% if cons.infirmier %}{{ cons.infirmier.full_name }}{% else %}Inconnu{% endif %}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 mb-3">
+                        {% if cons.poids %}
+                        <div class="text-xs">
+                            <span class="text-slate-400">Poids:</span>
+                            <span class="font-medium text-slate-700 ml-1">{{ cons.poids }} kg</span>
+                        </div>
+                        {% endif %}
+                        {% if cons.temperature %}
+                        <div class="text-xs">
+                            <span class="text-slate-400">Température:</span>
+                            <span class="font-medium text-slate-700 ml-1">{{ cons.temperature }} °C</span>
+                        </div>
+                        {% endif %}
+                        {% if cons.tension_arterielle %}
+                        <div class="text-xs">
+                            <span class="text-slate-400">Tension:</span>
+                            <span class="font-medium text-slate-700 ml-1">{{ cons.tension_arterielle }}</span>
+                        </div>
+                        {% endif %}
+                        {% if cons.frequence_cardiaque %}
+                        <div class="text-xs">
+                            <span class="text-slate-400">Fréquence cardiaque:</span>
+                            <span class="font-medium text-slate-700 ml-1">{{ cons.frequence_cardiaque }} bpm</span>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-2">
+                        <p class="text-xs font-semibold text-slate-600 mb-1">Diagnostic:</p>
+                        <p class="text-sm text-slate-700 leading-snug">{{ cons.diagnostic }}</p>
+                    </div>
+
+                    <div>
+                        <p class="text-xs font-semibold text-slate-600 mb-1">Traitement:</p>
+                        <p class="text-sm text-slate-700 leading-snug">{{ cons.traitement }}</p>
+                    </div>
+
+                    {% if cons.observations %}
+                    <div class="mt-3 pt-3 border-t border-slate-100">
+                        <p class="text-xs font-semibold text-slate-600 mb-1">Observations:</p>
+                        <p class="text-sm text-slate-600 leading-snug">{{ cons.observations }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="text-center py-12">
+                <svg class="w-16 h-16 text-slate-200 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.5">
+                    <path
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+                <p class="text-slate-400 text-sm">Aucune consultation enregistrée</p>
+                {% if user.role.value == 'infirmier' %}
+                <a href="/patients/{{ patient.id }}/consultation"
+                    class="text-blue-600 text-sm hover:underline mt-2 inline-block">Créer une consultation →</a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

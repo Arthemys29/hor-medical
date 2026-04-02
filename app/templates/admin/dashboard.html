@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% block title %}Tableau de bord Directeur{% endblock %}
+{% block page_title %}Tableau de bord{% endblock %}
+{% block page_subtitle %}Vue d'ensemble de l'établissement{% endblock %}
+
+{% block content %}
+<!-- Stat cards -->
+<div class="grid grid-cols-4 gap-5 mb-8">
+    <div class="card p-5 flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+            </svg>
+        </div>
+        <div>
+            <p class="text-2xl font-bold text-slate-800">{{ total_patients }}</p>
+            <p class="text-sm text-slate-500">Patients enregistrés</p>
+        </div>
+    </div>
+    <div class="card p-5 flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+            </svg>
+        </div>
+        <div>
+            <p class="text-2xl font-bold text-slate-800">{{ total_users }}</p>
+            <p class="text-sm text-slate-500">Utilisateurs actifs</p>
+        </div>
+    </div>
+    <div class="card p-5 flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+        </div>
+        <div>
+            <p class="text-2xl font-bold text-slate-800">{{ total_events }}</p>
+            <p class="text-sm text-slate-500">Événements sécurité</p>
+        </div>
+    </div>
+    <div class="card p-5 flex items-center gap-4 {% if unresolved_alerts > 0 %}border-2 border-red-200{% endif %}">
+        <div
+            class="w-12 h-12 rounded-xl {% if unresolved_alerts > 0 %}bg-red-100{% else %}bg-slate-100{% endif %} flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 {% if unresolved_alerts > 0 %}text-red-600{% else %}text-slate-600{% endif %}"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 01-3.46 0" />
+            </svg>
+        </div>
+        <div>
+            <p class="text-2xl font-bold {% if unresolved_alerts > 0 %}text-red-600{% else %}text-slate-800{% endif %}">
+                {{ unresolved_alerts }}</p>
+            <p class="text-sm text-slate-500">Alertes non résolues</p>
+        </div>
+    </div>
+</div>
+
+<div class="grid grid-cols-3 gap-6">
+    <!-- Alertes récentes -->
+    <div class="col-span-1 card p-6">
+        <div class="flex items-center justify-between mb-5">
+            <h3 class="font-semibold text-slate-800">Alertes récentes</h3>
+            <a href="/security/dashboard" class="text-xs text-blue-600 hover:underline">Voir tout →</a>
+        </div>
+        <div class="space-y-3">
+            {% for alert in recent_alerts %}
+            <div class="p-3 rounded-xl border
+        {% if alert.alert_level.value == 'critical' %}bg-pink-50 border-pink-200
+        {% elif alert.alert_level.value == 'high' %}bg-red-50 border-red-200
+        {% elif alert.alert_level.value == 'medium' %}bg-amber-50 border-amber-200
+        {% else %}bg-blue-50 border-blue-200{% endif %}">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="severity-dot
+            {% if alert.alert_level.value == 'critical' %}sev-critical
+            {% elif alert.alert_level.value == 'high' %}sev-high
+            {% elif alert.alert_level.value == 'medium' %}sev-medium
+            {% else %}sev-low{% endif %}"></span>
+                    <span class="text-xs font-semibold uppercase tracking-wide
+            {% if alert.alert_level.value == 'critical' %}text-pink-700
+            {% elif alert.alert_level.value == 'high' %}text-red-700
+            {% elif alert.alert_level.value == 'medium' %}text-amber-700
+            {% else %}text-blue-700{% endif %}">{{ alert.alert_level.value }}</span>
+                    <span class="text-xs text-slate-400 ml-auto">{{ alert.timestamp.strftime('%H:%M') }}</span>
+                </div>
+                <p class="text-xs text-slate-700 leading-snug">{{ alert.message[:80] }}{% if alert.message|length > 80
+                    %}…{% endif %}</p>
+            </div>
+            {% else %}
+            <p class="text-slate-400 text-sm text-center py-6">Aucune alerte</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Événements récents -->
+    <div class="col-span-2 card p-6">
+        <div class="flex items-center justify-between mb-5">
+            <h3 class="font-semibold text-slate-800">Événements de sécurité récents</h3>
+            <a href="/security/dashboard" class="text-xs text-blue-600 hover:underline">Voir tout →</a>
+        </div>
+        <div class="overflow-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-slate-100">
+                        <th class="text-left py-2 px-3 text-slate-500">Heure</th>
+                        <th class="text-left py-2 px-3 text-slate-500">Événement</th>
+                        <th class="text-left py-2 px-3 text-slate-500">Utilisateur</th>
+                        <th class="text-left py-2 px-3 text-slate-500">Sévérité</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-50">
+                    {% for ev in recent_events %}
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="py-2.5 px-3 text-slate-400 text-xs">{{ ev.timestamp.strftime('%H:%M:%S') }}</td>
+                        <td class="py-2.5 px-3 text-slate-700 font-medium text-xs">{{ ev.event_type.replace('_','
+                            ').title() }}</td>
+                        <td class="py-2.5 px-3 text-slate-600 text-xs">{{ ev.username or '—' }}</td>
+                        <td class="py-2.5 px-3">
+                            <span
+                                class="badge-{{ ev.severity.value if ev.severity else 'low' }} text-xs px-2.5 py-1 rounded-full font-medium">
+                                {{ (ev.severity.value if ev.severity else 'low').upper() }}
+                            </span>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="4" class="text-center py-8 text-slate-400 text-sm">Aucun événement</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Derniers patients -->
+<div class="card p-6 mt-6">
+    <div class="flex items-center justify-between mb-5">
+        <h3 class="font-semibold text-slate-800">Derniers patients enregistrés</h3>
+        <a href="/patients/nouveau" class="flex items-center gap-2 text-sm font-medium text-white px-4 py-2 rounded-xl"
+            style="background: linear-gradient(135deg,#1558a0,#1d6fb8)">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+            Nouveau patient
+        </a>
+    </div>
+    <div class="overflow-auto">
+        <table class="w-full text-sm">
+            <thead>
+                <tr class="border-b border-slate-100">
+                    <th class="text-left py-2 px-4 text-slate-500">Patient</th>
+                    <th class="text-left py-2 px-4 text-slate-500">Sexe</th>
+                    <th class="text-left py-2 px-4 text-slate-500">Téléphone</th>
+                    <th class="text-left py-2 px-4 text-slate-500">Enregistré le</th>
+                    <th class="text-left py-2 px-4 text-slate-500">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-50">
+                {% for p in recent_patients %}
+                <tr class="hover:bg-slate-50 transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                <span class="text-blue-700 font-semibold text-xs">{{ p.prenom[0] }}{{ p.nom[0] }}</span>
+                            </div>
+                            <div>
+                                <p class="font-medium text-slate-800">{{ p.prenom }} {{ p.nom }}</p>
+                                <p class="text-xs text-slate-400">Né(e) le {{ p.date_naissance }}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 text-slate-600">{{ 'Masculin' if p.sexe.value == 'M' else 'Féminin' }}</td>
+                    <td class="py-3 px-4 text-slate-600">{{ p.telephone or '—' }}</td>
+                    <td class="py-3 px-4 text-slate-400 text-xs">{{ p.created_at.strftime('%d/%m/%Y') }}</td>
+                    <td class="py-3 px-4">
+                        <a href="/patients/{{ p.id }}" class="text-blue-600 hover:underline text-xs font-medium">Voir
+                            dossier →</a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5" class="text-center py-8 text-slate-400">Aucun patient</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

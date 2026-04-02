@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Dossiers Patients{% endblock %}
+{% block page_title %}Dossiers patients{% endblock %}
+{% block page_subtitle %}{{ patients|length }} patient(s) enregistré(s){% endblock %}
+
+
+{% block content %}
+<div class="flex items-center justify-between mb-6">
+  <div class="relative">
+    <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+    <input type="text" id="search" placeholder="Rechercher un patient…"
+      class="pl-9 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all w-72" />
+  </div>
+  <a href="/patients/nouveau"
+    class="flex items-center gap-2 text-sm font-semibold text-white px-4 py-2.5 rounded-xl shadow-sm hover:-translate-y-px transition-all"
+    style="background:linear-gradient(135deg,#1558a0,#1d6fb8);box-shadow:0 4px 14px rgba(21,88,160,.3)">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="12" y1="5" x2="12" y2="19" />
+      <line x1="5" y1="12" x2="19" y2="12" />
+    </svg>
+    Nouveau patient
+  </a>
+</div>
+
+<div class="card overflow-hidden">
+  <table class="w-full text-sm">
+    <thead class="bg-slate-50 border-b border-slate-200">
+      <tr>
+        <th class="text-left py-3 px-5 text-slate-500">Patient</th>
+        <th class="text-left py-3 px-5 text-slate-500">Date de naissance</th>
+        <th class="text-left py-3 px-5 text-slate-500">Sexe</th>
+        <th class="text-left py-3 px-5 text-slate-500">Téléphone</th>
+        <th class="text-left py-3 px-5 text-slate-500">Adresse</th>
+        <th class="text-center py-3 px-5 text-slate-500">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-slate-100" id="patients-tbody">
+      {% for p in patients %}
+      <tr class="hover:bg-slate-50/70 transition-colors patient-row" data-name="{{ p.prenom }} {{ p.nom }}">
+        <td class="py-3.5 px-5">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0"
+              style="background:linear-gradient(135deg,hsl('{{ loop.index0 * 47 % 360 }}',60%,55%),hsl('{{ (loop.index0 * 47 + 30) % 360 }}',60%,45%))">
+              {{ p.prenom[0] }}{{ p.nom[0] }}</div>
+            <div>
+              <p class="font-semibold text-slate-800">{{ p.prenom }} {{ p.nom }}</p>
+              <p class="text-xs text-slate-400">Dossier #{{ p.id }}</p>
+            </div>
+          </div>
+        </td>
+        <td class="py-3.5 px-5 text-slate-600">{{ p.date_naissance }}</td>
+        <td class="py-3.5 px-5">
+          <span
+            class="px-2.5 py-1 rounded-full text-xs font-semibold {% if p.sexe.value == 'M' %}bg-blue-100 text-blue-700{% else %}bg-pink-100 text-pink-700{% endif %}">{{
+            'Masculin' if p.sexe.value == 'M' else 'Féminin' }}</span>
+        </td>
+        <td class="py-3.5 px-5 text-slate-600">{{ p.telephone or '—' }}</td>
+        <td class="py-3.5 px-5 text-slate-500 text-xs max-w-[180px] truncate">{{ p.adresse or '—' }}</td>
+        <td class="py-3.5 px-5 text-center">
+          <div class="flex items-center justify-center gap-2">
+            <a href="/patients/{{ p.id }}"
+              class="text-xs px-3 py-1.5 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 font-medium transition-colors">Dossier</a>
+            {% if user.role.value == 'infirmier' %}
+            <a href="/patients/{{ p.id }}/consultation"
+              class="text-xs px-3 py-1.5 rounded-lg bg-green-100 text-green-700 hover:bg-green-200 font-medium transition-colors">Consultation</a>
+            {% endif %}
+          </div>
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="6" class="text-center py-12 text-slate-400">Aucun patient enregistré</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  document.getElementById('search').addEventListener('input', function () {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('.patient-row').forEach(row => {
+      row.style.display = row.dataset.name.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+</script>
+{% endblock %}

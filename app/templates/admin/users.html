@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block title %}Utilisateurs{% endblock %}
+{% block page_title %}Utilisateurs{% endblock %}
+{% block page_subtitle %}Gérer les accès et permissions{% endblock %}
+
+
+{% block content %}
+<div class="flex items-center justify-between mb-6">
+    <div class="relative">
+        <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input type="text" id="search" placeholder="Rechercher un utilisateur…"
+            class="pl-9 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm bg-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all w-72" />
+    </div>
+    <a href="/admin/users/nouveau"
+        class="flex items-center gap-2 text-sm font-semibold text-white px-4 py-2.5 rounded-xl shadow-sm hover:-translate-y-px transition-all"
+        style="background:linear-gradient(135deg,#1558a0,#1d6fb8);box-shadow:0 4px 14px rgba(21,88,160,.3)">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+        </svg>
+        Nouvel utilisateur
+    </a>
+</div>
+
+{% if error %}
+<div class="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-xl text-sm">{{ error }}</div>
+{% endif %}
+
+<div class="card overflow-hidden">
+    <table class="w-full text-sm" id="users-table">
+        <thead class="bg-slate-50 border-b border-slate-200">
+            <tr>
+                <th class="text-left py-3 px-5 text-slate-500">Utilisateur</th>
+                <th class="text-left py-3 px-5 text-slate-500">Rôle</th>
+                <th class="text-left py-3 px-5 text-slate-500">Statut</th>
+                <th class="text-left py-3 px-5 text-slate-500">Créé le</th>
+                <th class="text-left py-3 px-5 text-slate-500">Créé par</th>
+                <th class="text-center py-3 px-5 text-slate-500">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100" id="users-tbody">
+            {% for u in users %}
+            <tr class="hover:bg-slate-50/70 transition-colors user-row" data-name="{{ u.username }} {{ u.full_name }}">
+                <td class="py-3.5 px-5">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0"
+                            style="background:linear-gradient(135deg,hsl('{{ loop.index0 * 53 % 360 }}',60%,55%),hsl('{{ (loop.index0 * 53 + 30) % 360 }}',60%,45%))">
+                            {{ u.full_name[0]|upper }}</div>
+                        <div>
+                            <p class="font-semibold text-slate-800">{{ u.full_name }}</p>
+                            <p class="text-xs text-slate-400">@{{ u.username }}</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="py-3.5 px-5">
+                    <span class="px-3 py-1.5 rounded-full text-xs font-semibold
+                        {% if u.role.value == 'directeur' %}bg-amber-100 text-amber-700
+                        {% elif u.role.value == 'security' %}bg-red-100 text-red-700
+                        {% else %}bg-green-100 text-green-700{% endif %}">
+                        {{ u.role.value|title }}
+                    </span>
+                </td>
+                <td class="py-3.5 px-5">
+                    <span
+                        class="px-3 py-1.5 rounded-full text-xs font-semibold {% if u.is_locked %}bg-slate-100 text-slate-600{% else %}bg-green-100 text-green-700{% endif %}">
+                        {{ 'Verrouillé' if u.is_locked else 'Actif' }}
+                    </span>
+                </td>
+                <td class="py-3.5 px-5 text-slate-500 text-xs">{{ u.created_at.strftime('%d/%m/%Y à %H:%M') }}</td>
+                <td class="py-3.5 px-5 text-slate-500 text-xs">{{ u.created_by or 'Système' }}</td>
+                <td class="py-3.5 px-5 text-center">
+                    {% if u.id != user.id %}
+                    <form method="post" action="/admin/users/{{ u.id }}/toggle-lock" class="inline">
+                        <button type="submit"
+                            class="text-xs px-3 py-1.5 rounded-lg font-medium transition-colors {% if u.is_locked %}bg-green-100 text-green-700 hover:bg-green-200{% else %}bg-red-100 text-red-700 hover:bg-red-200{% endif %}">
+                            {{ 'Déverrouiller' if u.is_locked else 'Verrouiller' }}
+                        </button>
+                    </form>
+                    {% else %}
+                    <span class="text-xs text-slate-400">—</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="6" class="text-center py-8 text-slate-400">Aucun utilisateur</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    document.getElementById('search').addEventListener('input', function () {
+        const q = this.value.toLowerCase();
+        document.querySelectorAll('.user-row').forEach(row => {
+            row.style.display = row.dataset.name.toLowerCase().includes(q) ? '' : 'none';
+        });
+    });
+</script>
+{% endblock %}
